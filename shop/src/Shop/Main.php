@@ -8,9 +8,10 @@ use pocketmine\Server;
 
 class Main extends PluginBase implements Listener{
 
+    /** @var getInstance() */
     public static $instance;
 
-    function onEnable()
+    public function onEnable() : Void
     {
         Server::getInstance()->getCommandMap()->registerAll("shop", [
             new \Shop\Commands\ShopCommands
@@ -20,19 +21,19 @@ class Main extends PluginBase implements Listener{
         $this->info();
     }
 
-    function info(){
+    public function info(){
     Server::getInstance()->getLogger()->notice('
     
-    Plugin by talk.24serv.pro
-    author: WHOIM
+    Plugin for talk.24serv.pro
+    author: OneWearf4k
     ');
     }
 
     /**
-     * @param getInstance
+     * @return getInstance
      **/
 
-    public static function getInstance(){
+    public static function getInstance() : Main{
         return self::$instance;
     }
 }
