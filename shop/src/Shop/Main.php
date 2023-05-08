@@ -32,7 +32,7 @@ class Main extends PluginBase implements Listener{
     }
 
     /**
-     * @return getInstance
+     * @return instance
      **/
 
     public static function getInstance() : Main{
