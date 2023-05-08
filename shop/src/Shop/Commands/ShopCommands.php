@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Shop\Commands;
 
 use pocketmine\command\{Command, CommandSender};
@@ -11,7 +13,7 @@ class ShopCommands extends Command{
     public function __construct(){
         parent::__construct('shop');
     }
-    public function execute(CommandSender $s, $label, array $args){
+    public function execute(CommandSender $s, $label, array $args) : Bool{
         switch($args[0]){
             case 'menu':
                 $chest = ChestAPI::getInstance()->openChest($s, [
